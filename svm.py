@@ -5,6 +5,7 @@ from matplotlib import style
 style.use("ggplot")
 from sklearn import svm
 from sklearn.model_selection import KFold, cross_val_score
+from sklearn.metrics import classification_report
 
 #loading breast cancer data from UCI ML Repo
 url = "https://goo.gl/AP7kzV"
