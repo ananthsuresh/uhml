@@ -35,7 +35,7 @@ i = 1
 
 for train, test in k_fold.split(X):
     fitted = svc.fit(X[train], y[train])
-    accuracy = fited.score(X[test], y[test])
+    accuracy = fitted.score(X[test], y[test])
     predicted = svc.predict(X[test])
     report = classification_report(y[test], predicted)
     confusion = confusion_matrix(y[test], predicted)
