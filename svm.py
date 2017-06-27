@@ -48,4 +48,4 @@ for train, test in k_fold.split(X):
     print(confusion)
     print("\n")
     print("F1 score: %f \n", f1)
-    i++
+    i+=1
