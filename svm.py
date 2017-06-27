@@ -15,7 +15,7 @@ dataset = np.genfromtxt(raw_data, delimiter=",")
 X = dataset[:,0:10]
 y = dataset[:,10]
 
-#N fold cross validation with n = 5
+#splits data into 5 chunks for N fold cross validation
 k_fold = KFold(n_splits=5)
 #below chunk is to test which are testing and training
 #for train_indices, test_indices in k_fold.split(X):
