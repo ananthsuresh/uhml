@@ -39,7 +39,7 @@ for train, test in k_fold.split(X):
     predicted = svc.predict(X[test])
     report = classification_report(y[test], predicted)
     confusion = confusion_matrix(y[test], predicted)
-    f1 = f1_score(y[test], predicted)
+    f1 = f1_score(y[test], predicted, pos_label=4)
     print("Scores for Fold %d \n", i)
     print(report)
     print("\n")
