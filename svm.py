@@ -22,7 +22,7 @@ k_fold = KFold(n_splits=5)
 #for train_indices, test_indices in k_fold.split(X):
     #print('Train: %s | test: %s' % (train_indices, test_indices))
 
-svc = svm.SVC(C=0.1, kernel='linear')
+svc = svm.SVC(C=1, kernel='linear')
 
 #to change all nan values to 0
 X[(np.isnan(X))] = 0
