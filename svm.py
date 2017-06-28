@@ -5,7 +5,7 @@ from matplotlib import style
 style.use("ggplot")
 from sklearn import svm
 from sklearn.model_selection import KFold, cross_val_score
-from sklearn.metrics import classification_report, confusion_matrix, f1_score
+from sklearn.metrics import classification_report, confusion_matrix, f1_score, matthews_corrcoef
 
 #loading breast cancer data from UCI ML Repo
 url = "https://goo.gl/AP7kzV"
@@ -39,13 +39,13 @@ for train, test in k_fold.split(X):
     predicted = svc.predict(X[test])
     report = classification_report(y[test], predicted)
     confusion = confusion_matrix(y[test], predicted)
-    f1 = f1_score(y[test], predicted, pos_label=4)
-    print("Scores for Fold %d \n", i)
+    mcc = matthews_corrcoef(y[test], predicted)
+    print("Scores for Fold %d \n" % (i))
     print(report)
     print("\n")
-    print("Accuracy Score: %f \n",accuracy)
+    print("Accuracy Score: %f \n" % (accuracy))
+    print("MCC: %f \n" % (mcc))
     print("Confusion Matrix: \n")
     print(confusion)
     print("\n")
-    print("F1 score: %f \n", f1)
     i+=1
