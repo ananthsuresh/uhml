@@ -10,6 +10,7 @@ dataframe = pandas.read_csv(url, names=names)
 array = dataframe.values
 X = array[:,0:10]
 Y = array[:,10]
+X[(np.isnan(X))] = 0
 # feature extraction
 test = SelectKBest(score_func=chi2, k=4)
 fit = test.fit(X, Y)
